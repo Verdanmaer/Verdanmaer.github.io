@@ -1,0 +1,26 @@
+body {
+    background-color: rgb(127,255,212);
+    
+    margin-top: 80px;
+    
+    text-align: center;
+    font-size: 25px; 
+}
+  
+#title {
+font-size: 60px;
+}
+  
+#temp {
+    font-size: 45px;
+}
+  
+#temp:hover {
+    cursor: pointer;
+    user-select: none;
+}
+  
+#icon {
+    height: 150px;
+    width: 150px;
+}
