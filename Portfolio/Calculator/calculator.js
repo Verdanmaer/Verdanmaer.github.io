@@ -1,14 +1,14 @@
 $(document).ready(function(){
 
-    var number = [];
-    var display = [];
-    var dot = false;
+    let number = [];
+    let display = [];
+    let dot = false;
     
     $(".calculate").click(function(){
         if (display.length > 8) {
             console.log("Too many digits");
         } else {
-            var selectedDigit = $(this).text();
+            let selectedDigit = $(this).text();
             number.push(selectedDigit);
             display.push(selectedDigit);
             $("#input").html(display);
@@ -39,7 +39,7 @@ $(document).ready(function(){
     
     $(".operators").click(function() {
         display = [];
-        var operator = $(this).text();
+        let operator = $(this).text();
         $("#input").html(operator);
         dot = false;
     });
