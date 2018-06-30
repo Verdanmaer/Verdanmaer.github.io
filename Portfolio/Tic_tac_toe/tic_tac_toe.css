@@ -1,0 +1,54 @@
+body {
+    background-color: #F0F8FF;
+    
+    margin-top: 100px;
+    
+    text-align: center;
+}
+  
+#choice {
+    padding: 5px;
+
+    border: 2px solid black;
+}
+  
+table {
+    margin: auto;
+    
+    border: 5px solid black;
+}
+  
+td {  
+    height: 80px;
+    width: 80px;
+    
+    border: 2px solid black;
+    
+    text-align: center;
+    font-size: 3rem;
+    
+    user-select: none;
+}
+  
+td:hover {
+    cursor: pointer;
+}
+  
+#board {
+    position: absolute;
+    top: 290px;
+    left: 0; 
+    right: 0;
+    
+    width: 300px; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+  
+.cell {
+    pointer-events: none;
+}
+  
+#result {
+    font-size: 2rem;
+}
