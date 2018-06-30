@@ -1,11 +1,8 @@
-body {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    
+body { 
     background-color: #F0F8FF;
     
+    margin-top: 100px;
+
     text-align: center;
 }
   
