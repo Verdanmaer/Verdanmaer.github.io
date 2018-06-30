@@ -1,0 +1,36 @@
+body {
+    background: #C0C0C0;
+    
+    margin-top: 50px;
+    
+    text-align: center;
+}
+  
+p {
+    font-size: 25px;
+}
+  
+button {
+    background: white;
+
+    border-style: solid;
+    border-color: black;
+    border-radius: 20px; 
+
+    font-size: 1.25rem;
+}
+  
+button:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+  
+#time {
+    margin: 5px auto;
+
+    font-size: 3rem;
+}
+  
+#isWorkTime {
+    font-size: 3rem;
+}
