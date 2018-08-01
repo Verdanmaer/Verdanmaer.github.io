@@ -10,6 +10,8 @@ $(document).ready(function() {
     let relaxInterval;
     
     let timeIsRunning = false;
+
+    let beepSound = new Audio('beep.wav');
     
     $("#workTime").html(workTime / 60);
     $("#relaxTime").html(relaxTime / 60);
@@ -79,7 +81,8 @@ $(document).ready(function() {
         if (workTime == 0) {
             clearInterval(workInterval); 
             // reset work time to default so the next countdown starts again from same time
-            workTime = defaultWorkTime;   
+            workTime = defaultWorkTime;  
+            beepSound.play(); 
             setRelaxTime();
             
             $("#isWorkTime").html("RELAX").css("color", "green");
@@ -108,6 +111,7 @@ $(document).ready(function() {
         if (relaxTime == 0) {
             clearInterval(relaxInterval);
             relaxTime = defaultRelaxTime;
+            beepSound.play();
             setWorkTime();
             
             $("#isWorkTime").html("WORK!").css("color", "red");
