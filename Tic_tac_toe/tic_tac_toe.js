@@ -10,11 +10,9 @@ $(document).ready(function() {
     let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8];
     
     $(".cell").click(function() {
-      
         $(this).html(player);
         
         let cellId = parseInt($(this).attr("id"));
-        console.log(cellId);
         numbers.splice(numbers.indexOf(cellId), 1);
         field[cellId] = player;
     
@@ -26,7 +24,6 @@ $(document).ready(function() {
         if ($('#result').is(':empty')){
             computersTurn();
         }
-      
     });
     
     $(".choice").click(function() {
