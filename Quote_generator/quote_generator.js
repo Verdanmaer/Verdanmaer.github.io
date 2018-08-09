@@ -1,5 +1,4 @@
 function getQuote() {
-    
     $.ajax({
       url: "https://api.forismatic.com/api/1.0/?",
       dataType: "jsonp", 
@@ -10,10 +9,10 @@ function getQuote() {
         $("#tweet").attr("href", "https://twitter.com/home/?status=" + response.quoteText +' (' + response.quoteAuthor + ')');
       }
     });
-  }
+}
   
-  $(function() {
+$(function() {
     getQuote();  
-  });
-  
-  $('#new-quote').on('click', getQuote);
+});
+
+$('#new-quote').on('click', getQuote);
