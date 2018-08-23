@@ -34,8 +34,8 @@ $(document).ready(function() {
   
   $("#relaxMinus").click(function() {
     if (relaxTime > 60) {
-        relaxTime -= 60;
-        $("#relaxTime").html(relaxTime / 60);
+      relaxTime -= 60;
+      $("#relaxTime").html(relaxTime / 60);
     }
   });
   
