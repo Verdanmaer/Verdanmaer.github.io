@@ -2,85 +2,85 @@
 @import url('https://fonts.googleapis.com/css?family=Orbitron');
 
 body {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    
-    background: #1E1F30;
-    color: #1E1F30;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  background: #1E1F30;
+  color: #1E1F30;
 }
 
 .wrapper {
-    max-width: 420px;
-    margin: 0 auto;
+  max-width: 420px;
+  margin: 0 auto;
 }
 
 .calculator {
-    background: white;
-    
-    margin-top: 50px;
-    
-    border-radius: 15px;
-    
-    font-family: 'Orbitron', sans-serif;
-    font-weight: bold;
+  background: white;
+  
+  margin-top: 50px;
+  
+  border-radius: 15px;
+  
+  font-family: 'Orbitron', sans-serif;
+  font-weight: bold;
 }
 
 #heading {
-    padding: 5px;
-    
-    text-align: center;
-    font-family: 'Aldrich', sans-serif;
+  padding: 5px;
+  
+  text-align: center;
+  font-family: 'Aldrich', sans-serif;
 }
 
 .display {
-    background: grey;
-    
-    height: 80px;
-    margin: 5px;
-    padding: 0px 10px;
-    
-    font-size: 50px;
-    text-align: right; 
+  background: grey;
+  
+  height: 80px;
+  margin: 5px;
+  padding: 0px 10px;
+  
+  font-size: 50px;
+  text-align: right; 
 }
 
 .grid-container {
-    display: grid;
-    grid-template-columns: repeat(1fr, 4);
-    grid-template-rows: repeat(1fr, 4);
-    
-    padding: 5px;
+  display: grid;
+  grid-template-columns: repeat(1fr, 4);
+  grid-template-rows: repeat(1fr, 4);
+  
+  padding: 5px;
 }
 
 .grid-container > div {
-    padding: 5px;
-    margin: 5px;
-    
-    border-style: solid;
-    border-width: 4px;
-    border-color: black;
-    
-    font-size: 20px;
-    text-align: center;
+  padding: 5px;
+  margin: 5px;
+  
+  border-style: solid;
+  border-width: 4px;
+  border-color: black;
+  
+  font-size: 20px;
+  text-align: center;
 }
 
 .grid-container > div:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 #equal {
-    grid-row: 6 / 4;
-    grid-column: 4 / 5;
-    
-    background: #7FFF00;
-    
-    padding-top: 31px;
-    padding-bottom: 31px;
-    align-self: center;
+  grid-row: 6 / 4;
+  grid-column: 4 / 5;
+  
+  background: #7FFF00;
+  
+  padding-top: 31px;
+  padding-bottom: 31px;
+  align-self: center;
 }
 
 #zero {
-    grid-row: 5 / 6;
-    grid-column: 1 / 3;
+  grid-row: 5 / 6;
+  grid-column: 1 / 3;
 }

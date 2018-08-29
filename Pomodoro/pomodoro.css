@@ -1,39 +1,39 @@
 body {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    
-    background: #C0C0C0;
-    
-    text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  background: #C0C0C0;
+  
+  text-align: center;
 }
 
 p {
-    font-size: 25px;
+  font-size: 25px;
 }
   
 button {
-    background: white;
+  background: white;
 
-    border-style: solid;
-    border-color: black;
-    border-radius: 20px; 
+  border-style: solid;
+  border-color: black;
+  border-radius: 20px; 
 
-    font-size: 1.25rem;
+  font-size: 1.25rem;
 }
   
 button:hover {
-    opacity: 0.5;
-    cursor: pointer;
+  opacity: 0.5;
+  cursor: pointer;
 }
   
 #time {
-    margin: 5px auto;
+  margin: 5px auto;
 
-    font-size: 3rem;
+  font-size: 3rem;
 }
   
 #isWorkTime {
-    font-size: 3rem;
+  font-size: 3rem;
 }

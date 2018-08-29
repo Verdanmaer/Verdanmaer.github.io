@@ -1,29 +1,29 @@
 body {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    
-    background-color: rgb(127,255,212);
-    
-    text-align: center;
-    font-size: 25px; 
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  background-color: rgb(127,255,212);
+  
+  text-align: center;
+  font-size: 25px; 
 }
   
 #title {
-font-size: 60px;
+  font-size: 60px;
 }
   
 #temp {
-    font-size: 45px;
+  font-size: 45px;
 }
   
 #temp:hover {
-    cursor: pointer;
-    user-select: none;
+  cursor: pointer;
+  user-select: none;
 }
   
 #icon {
-    height: 150px;
-    width: 150px;
+  height: 150px;
+  width: 150px;
 }
