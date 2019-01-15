@@ -6,7 +6,8 @@ class Timer extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { date: this.props.date };
+    this.timeInMinutes = 60000;
+    this.state = { date: 25 * this.timeInMinutes };
   }
 
   startTimer = () => {
