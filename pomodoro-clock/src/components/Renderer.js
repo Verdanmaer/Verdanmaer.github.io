@@ -1,34 +1,30 @@
 import React from "react";
 
 const Renderer = ({ minutes, seconds, completed }) => {
-  if (completed) {
-    return <div>completed</div>;
+  if (seconds < 10 && minutes >= 10) {
+    return (
+      <div className="timer">
+        {minutes}:0{seconds}
+      </div>
+    );
+  } else if (seconds >= 10 && minutes < 10) {
+    return (
+      <div className="timer">
+        0{minutes}:{seconds}
+      </div>
+    );
+  } else if (seconds < 10 && minutes < 10) {
+    return (
+      <div className="timer">
+        0{minutes}:0{seconds}
+      </div>
+    );
   } else {
-    if (seconds < 10 && minutes >= 10) {
-      return (
-        <span>
-          {minutes}:0{seconds}
-        </span>
-      );
-    } else if (seconds >= 10 && minutes < 10) {
-      return (
-        <span>
-          0{minutes}:{seconds}
-        </span>
-      );
-    } else if (seconds < 10 && minutes < 10) {
-      return (
-        <span>
-          0{minutes}:0{seconds}
-        </span>
-      );
-    } else {
-      return (
-        <span>
-          {minutes}:{seconds}
-        </span>
-      );
-    }
+    return (
+      <div className="timer">
+        {minutes}:{seconds}
+      </div>
+    );
   }
 };
 
