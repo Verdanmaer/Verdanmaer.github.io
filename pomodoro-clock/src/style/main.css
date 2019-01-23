@@ -4,7 +4,6 @@
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  display: inline-block;
 }
 
 .digits {
@@ -12,7 +11,9 @@
   margin: 20px 0px;
 }
 
-.inline {
+.time-settings {
   display: inline-block;
-  margin: 25px;
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 15px;
 }

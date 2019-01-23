@@ -8,8 +8,8 @@ class App extends React.Component {
 
     this.timeInMinutes = 60000;
     this.state = {
-      defaultWorkTime: 0.2 * this.timeInMinutes,
-      defaultPauseTime: 0.1 * this.timeInMinutes,
+      defaultWorkTime: 5 * this.timeInMinutes,
+      defaultPauseTime: 5 * this.timeInMinutes,
       timerStarted: false,
       isWorkTime: false
     };
@@ -27,6 +27,22 @@ class App extends React.Component {
     if (this.state.defaultWorkTime > 5 * this.timeInMinutes) {
       this.setState(({ defaultWorkTime }) => ({
         defaultWorkTime: defaultWorkTime - 5 * this.timeInMinutes
+      }));
+    }
+  };
+
+  increasePauseTime = () => {
+    if (this.state.defaultPauseTime < 55 * this.timeInMinutes) {
+      this.setState(({ defaultPauseTime }) => ({
+        defaultPauseTime: defaultPauseTime + 5 * this.timeInMinutes
+      }));
+    }
+  };
+
+  decreasePauseTime = () => {
+    if (this.state.defaultPauseTime > 5 * this.timeInMinutes) {
+      this.setState(({ defaultPauseTime }) => ({
+        defaultPauseTime: defaultPauseTime - 5 * this.timeInMinutes
       }));
     }
   };
@@ -83,11 +99,13 @@ class App extends React.Component {
     return (
       <div className="ui container">
         <h1>Pomodoro clock</h1>
-        <div className="inline">Something</div>
-        <div className="inline">Anything</div>
         <TimeSettings
+          defaultWorkTime={this.state.defaultWorkTime}
+          defaultPauseTime={this.state.defaultPauseTime}
           increaseWorkTime={this.increaseWorkTime}
           decreaseWorkTime={this.decreaseWorkTime}
+          increasePauseTime={this.increasePauseTime}
+          decreasePauseTime={this.decreasePauseTime}
           startWorkTime={this.startWorkTime}
           stopTimer={this.stopTimer}
         />
