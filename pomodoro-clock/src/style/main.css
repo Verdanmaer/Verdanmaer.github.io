@@ -7,7 +7,12 @@
   display: inline-block;
 }
 
-.timer {
+.digits {
   font-size: 34px;
   margin: 20px 0px;
+}
+
+.inline {
+  display: inline-block;
+  margin: 25px;
 }

@@ -8,7 +8,7 @@ class App extends React.Component {
 
     this.timeInMinutes = 60000;
     this.state = {
-      defaultWorkTime: 0.1 * this.timeInMinutes,
+      defaultWorkTime: 0.2 * this.timeInMinutes,
       defaultPauseTime: 0.1 * this.timeInMinutes,
       timerStarted: false,
       isWorkTime: false
@@ -16,7 +16,6 @@ class App extends React.Component {
   }
 
   increaseWorkTime = () => {
-    console.log(this.state.defaultWorkTime);
     if (this.state.defaultWorkTime < 55 * this.timeInMinutes) {
       this.setState(({ defaultWorkTime }) => ({
         defaultWorkTime: defaultWorkTime + 5 * this.timeInMinutes
@@ -49,6 +48,7 @@ class App extends React.Component {
         });
         this.startPauseTime();
       }
+      console.log(this.state.isWorkTime);
       this.setState(({ workTime }) => ({ workTime: workTime - 1000 }));
     }, 1000);
   };
@@ -64,25 +64,40 @@ class App extends React.Component {
         });
         this.startWorkTime();
       }
+      console.log(this.state.isWorkTime);
       this.setState(({ pauseTime }) => ({ pauseTime: pauseTime - 1000 }));
     }, 1000);
+  };
+
+  stopTimer = () => {
+    this.setState({
+      workTime: this.state.defaultWorkTime,
+      pauseTime: this.state.defaultPauseTime,
+      timerStarted: false,
+      isWorkTime: false
+    });
+    window.clearInterval(this.countdownInterval);
   };
 
   render() {
     return (
       <div className="ui container">
         <h1>Pomodoro clock</h1>
+        <div className="inline">Something</div>
+        <div className="inline">Anything</div>
+        <TimeSettings
+          increaseWorkTime={this.increaseWorkTime}
+          decreaseWorkTime={this.decreaseWorkTime}
+          startWorkTime={this.startWorkTime}
+          stopTimer={this.stopTimer}
+        />
         <Timer
+          className="timer"
           defaultWorkTime={this.state.defaultWorkTime}
           workTime={this.state.workTime}
           pauseTime={this.state.pauseTime}
           timerStarted={this.state.timerStarted}
           isWorkTime={this.state.isWorkTime}
-        />
-        <TimeSettings
-          increaseWorkTime={this.increaseWorkTime}
-          decreaseWorkTime={this.decreaseWorkTime}
-          startWorkTime={this.startWorkTime}
         />
       </div>
     );
