@@ -1,108 +1,96 @@
+$primary-color-dark: rgb(58, 0, 3);
+$primary-color-light: rgb(202, 39, 48);
+
+html {
+  font-size: 62.5%;
+}
+
 .container {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  /*background-image: linear-gradient(
-    to top,
-    rgb(100, 149, 237),
-    rgba(100, 198, 237, 0.61)
-  );*/
   background-image: linear-gradient(
     to top,
-    rgb(150, 9, 16),
-    rgba(109, 0, 5, 0.61)
+    $primary-color-dark,
+    $primary-color-light
   );
-  width: 50%;
+  width: 40%;
   padding: 2rem;
   border-radius: 5px;
   color: white;
+  .title {
+    font: 100 4rem "Montserrat", sans-serif;
+    letter-spacing: 5px;
+    word-spacing: 10px;
+    padding: 2rem;
+    text-transform: uppercase;
+    border-bottom: 2px solid white;
+  }
+  .timer-settings {
+    display: inline-block;
+    text-align: center;
+    font-size: 2rem;
+    margin: 22px 55px 0;
+    p {
+      display: inline-block;
+      margin: 20px 20px;
+    }
+  }
+  .timer {
+    font: 100 6rem sans-serif;
+    margin: 20px 0px;
+    padding: 1rem 0 0;
+    border-top: 2px solid white;
+  }
+  .timer-info {
+    font-size: 2.5rem;
+    margin: 0 0 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid white;
+  }
+  button {
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  .test {
+    color: $primary-color-dark !important;
+    background-color: white !important;
+    font-size: 1.5rem !important;
+    padding: 1rem !important;
+    margin: 1rem !important;
+    min-width: 30%;
+  }
+  .test2 {
+    font-size: 1.5rem !important;
+    margin: 0 !important;
+  }
+  i {
+    color: $primary-color-dark;
+  }
 }
-
-.title {
-  font: 100 4rem "Montserrat", sans-serif;
-  letter-spacing: 5px;
-  word-spacing: 10px;
-  padding: 2rem;
-  text-transform: uppercase;
-  border-bottom: 2px solid white;
-}
-
-.timer-settings {
-  display: inline-block;
-  text-align: center;
-  font-size: 2rem;
-  margin: 22px 55px 0;
-}
-
-.timer-settings > p {
-  display: inline-block;
-  margin: 20px 20px;
-}
-
-.timer {
-  font: 100 6rem sans-serif;
-  margin: 20px 0px;
-  padding: 1rem 0 0;
-  border-top: 2px solid white;
-}
-
-.timer-info {
-  font-size: 2.5rem;
-  margin: 0 0 2rem;
-  padding-bottom: 2rem;
-  border-bottom: 2px solid white;
-}
-
-button {
-  background: none;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-}
-
-.test {
-  color: rgba(109, 0, 5, 0.61) !important;
-  background-color: white !important;
-  font-size: 1.5rem !important;
-  padding: 1rem !important;
-  margin: 1rem !important;
-  min-width: 30%;
-}
-
-.test2 {
-  font-size: 1.5rem !important;
-  margin: 0 !important;
-}
-
-i {
-  color: rgba(109, 0, 5, 0.61);
-}
-
 @media only screen and (max-width: 40em) {
   .container {
     width: 100%;
     min-width: 320px;
     padding: 0;
   }
-
   body {
     font-size: 16px;
   }
-
   .title {
     font-size: 2rem;
   }
 }
-
 @media (min-width: 40em) and (max-width: 75em) {
   .container {
     width: 80%;
     padding: 1rem;
   }
-
   .title {
     font-size: 1rem;
   }
