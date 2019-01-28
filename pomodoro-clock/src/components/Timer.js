@@ -1,6 +1,6 @@
 import React from "react";
 import Countdown from "react-countdown-now";
-import Renderer from "./Renderer";
+import TimerRenderer from "./TimerRenderer";
 
 class Timer extends React.Component {
   renderLogic = () => {
@@ -19,7 +19,7 @@ class Timer extends React.Component {
         date={this.renderLogic()}
         daysInHours
         autoStart={false}
-        renderer={Renderer}
+        renderer={TimerRenderer}
         controlled={true}
       />
     );

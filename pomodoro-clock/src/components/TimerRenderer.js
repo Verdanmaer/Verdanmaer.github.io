@@ -1,31 +1,31 @@
 import React from "react";
 
-const Renderer = ({ minutes, seconds, completed }) => {
+const TimerRenderer = ({ minutes, seconds, completed }) => {
   if (seconds < 10 && minutes >= 10) {
     return (
-      <div className="digits">
+      <div className="timer">
         {minutes}:0{seconds}
       </div>
     );
   } else if (seconds >= 10 && minutes < 10) {
     return (
-      <div className="digits">
+      <div className="timer">
         0{minutes}:{seconds}
       </div>
     );
   } else if (seconds < 10 && minutes < 10) {
     return (
-      <div className="digits">
+      <div className="timer">
         0{minutes}:0{seconds}
       </div>
     );
   } else {
     return (
-      <div className="digits">
+      <div className="timer">
         {minutes}:{seconds}
       </div>
     );
   }
 };
 
-export default Renderer;
+export default TimerRenderer;

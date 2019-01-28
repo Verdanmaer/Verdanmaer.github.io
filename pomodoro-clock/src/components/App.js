@@ -1,6 +1,8 @@
 import React from "react";
-import TimeSettings from "./TimeSettings";
 import Timer from "./Timer";
+import TimeSettings from "./TimerSettings";
+import TimerControls from "./TimerControls";
+import TimerInfo from "./TimerInfo";
 
 class App extends React.Component {
   constructor(props) {
@@ -8,7 +10,7 @@ class App extends React.Component {
 
     this.timeInMinutes = 60000;
     this.state = {
-      defaultWorkTime: 5 * this.timeInMinutes,
+      defaultWorkTime: 25 * this.timeInMinutes,
       defaultPauseTime: 5 * this.timeInMinutes,
       timerStarted: false,
       isWorkTime: false
@@ -64,7 +66,6 @@ class App extends React.Component {
         });
         this.startPauseTime();
       }
-      console.log(this.state.isWorkTime);
       this.setState(({ workTime }) => ({ workTime: workTime - 1000 }));
     }, 1000);
   };
@@ -80,7 +81,6 @@ class App extends React.Component {
         });
         this.startWorkTime();
       }
-      console.log(this.state.isWorkTime);
       this.setState(({ pauseTime }) => ({ pauseTime: pauseTime - 1000 }));
     }, 1000);
   };
@@ -97,26 +97,30 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="ui container">
-        <h1>Pomodoro clock</h1>
-        <TimeSettings
-          defaultWorkTime={this.state.defaultWorkTime}
-          defaultPauseTime={this.state.defaultPauseTime}
-          increaseWorkTime={this.increaseWorkTime}
-          decreaseWorkTime={this.decreaseWorkTime}
-          increasePauseTime={this.increasePauseTime}
-          decreasePauseTime={this.decreasePauseTime}
-          startWorkTime={this.startWorkTime}
-          stopTimer={this.stopTimer}
-        />
-        <Timer
-          className="timer"
-          defaultWorkTime={this.state.defaultWorkTime}
-          workTime={this.state.workTime}
-          pauseTime={this.state.pauseTime}
-          timerStarted={this.state.timerStarted}
-          isWorkTime={this.state.isWorkTime}
-        />
+      <div className="container">
+        <h1 className="title">Pomodoro clock</h1>
+        <div className="test3">
+          <TimeSettings
+            defaultWorkTime={this.state.defaultWorkTime}
+            defaultPauseTime={this.state.defaultPauseTime}
+            increaseWorkTime={this.increaseWorkTime}
+            decreaseWorkTime={this.decreaseWorkTime}
+            increasePauseTime={this.increasePauseTime}
+            decreasePauseTime={this.decreasePauseTime}
+          />
+          <Timer
+            defaultWorkTime={this.state.defaultWorkTime}
+            workTime={this.state.workTime}
+            pauseTime={this.state.pauseTime}
+            timerStarted={this.state.timerStarted}
+            isWorkTime={this.state.isWorkTime}
+          />
+          <TimerInfo isWorkTime={this.state.isWorkTime} />
+          <TimerControls
+            startWorkTime={this.startWorkTime}
+            stopTimer={this.stopTimer}
+          />
+        </div>
       </div>
     );
   }
