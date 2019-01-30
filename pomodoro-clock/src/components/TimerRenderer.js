@@ -1,6 +1,6 @@
 import React from "react";
 
-const TimerRenderer = ({ minutes, seconds, completed }) => {
+const TimerRenderer = ({ minutes, seconds }) => {
   if (seconds < 10 && minutes >= 10) {
     return (
       <div className="timer">

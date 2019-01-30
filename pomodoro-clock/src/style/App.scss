@@ -1,5 +1,9 @@
-$primary-color-dark: rgb(58, 0, 3);
-$primary-color-light: rgb(202, 39, 48);
+$primary-color-dark: rgb(133, 34, 34);
+$primary-color-light: rgba(219, 76, 76, 0.92);
+
+$text-color: white;
+
+$border-bottom: 2px solid rgba(255, 255, 255, 0.178);
 
 html {
   font-size: 62.5%;
@@ -11,87 +15,107 @@ html {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  background-image: linear-gradient(
-    to top,
-    $primary-color-dark,
-    $primary-color-light
-  );
-  width: 40%;
   padding: 2rem;
-  border-radius: 5px;
-  color: white;
+  border-radius: 25px;
+  color: $text-color;
+  background-image: linear-gradient(
+      to top,
+      $primary-color-dark,
+      $primary-color-light
+    ),
+    url("../img/clock.jpg");
+  background-size: cover;
+  background-position: top;
   .title {
-    font: 100 4rem "Montserrat", sans-serif;
+    font: 100 3.5rem "Montserrat", sans-serif;
     letter-spacing: 5px;
     word-spacing: 10px;
     padding: 2rem;
     text-transform: uppercase;
-    border-bottom: 2px solid white;
+    border-bottom: $border-bottom;
   }
   .timer-settings {
     display: inline-block;
     text-align: center;
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin: 22px 55px 0;
     p {
       display: inline-block;
       margin: 20px 20px;
     }
+    button {
+      background: none;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+    i {
+      color: $text-color;
+    }
   }
   .timer {
-    font: 100 6rem sans-serif;
+    font: 100 5rem "Montserrat", sans-serif;
     margin: 20px 0px;
     padding: 1rem 0 0;
-    border-top: 2px solid white;
+    border-top: $border-bottom;
   }
   .timer-info {
     font-size: 2.5rem;
     margin: 0 0 2rem;
     padding-bottom: 2rem;
-    border-bottom: 2px solid white;
+    border-bottom: $border-bottom;
   }
-  button {
-    background: none;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-  }
-  .test {
-    color: $primary-color-dark !important;
-    background-color: white !important;
-    font-size: 1.5rem !important;
-    padding: 1rem !important;
-    margin: 1rem !important;
-    min-width: 30%;
-  }
-  .test2 {
-    font-size: 1.5rem !important;
-    margin: 0 !important;
-  }
-  i {
-    color: $primary-color-dark;
+  .timer-controls {
+    button {
+      color: $primary-color-dark;
+      background-color: white;
+      font-size: 1.5rem;
+      padding: 1rem;
+      margin: 1rem;
+      min-width: 30%;
+      i {
+        color: $primary-color-dark;
+      }
+    }
   }
 }
-@media only screen and (max-width: 40em) {
+@media only screen and (max-width: 640px) {
   .container {
+    top: 0;
+    left: 0;
+    transform: none;
     width: 100%;
-    min-width: 320px;
+    min-width: 32rem;
+    min-height: 100%;
     padding: 0;
-  }
-  body {
-    font-size: 16px;
-  }
-  .title {
-    font-size: 2rem;
+    border-radius: 0;
+    .title {
+      font-size: 4rem;
+    }
+    .timer-settings {
+      font-size: 3rem;
+    }
+    .timer-controls {
+      button {
+        width: 70%;
+      }
+    }
   }
 }
-@media (min-width: 40em) and (max-width: 75em) {
+@media (min-width: 640px) and (max-width: 1200px) {
   .container {
-    width: 80%;
+    width: 70%;
+    max-height: 100%;
     padding: 1rem;
+    .title {
+      font-size: 3rem;
+    }
   }
-  .title {
-    font-size: 1rem;
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 40%;
+    max-height: 100%;
   }
 }

@@ -99,28 +99,30 @@ class App extends React.Component {
     return (
       <div className="container">
         <h1 className="title">Pomodoro clock</h1>
-        <div className="test3">
-          <TimeSettings
-            defaultWorkTime={this.state.defaultWorkTime}
-            defaultPauseTime={this.state.defaultPauseTime}
-            increaseWorkTime={this.increaseWorkTime}
-            decreaseWorkTime={this.decreaseWorkTime}
-            increasePauseTime={this.increasePauseTime}
-            decreasePauseTime={this.decreasePauseTime}
-          />
-          <Timer
-            defaultWorkTime={this.state.defaultWorkTime}
-            workTime={this.state.workTime}
-            pauseTime={this.state.pauseTime}
-            timerStarted={this.state.timerStarted}
-            isWorkTime={this.state.isWorkTime}
-          />
-          <TimerInfo isWorkTime={this.state.isWorkTime} />
-          <TimerControls
-            startWorkTime={this.startWorkTime}
-            stopTimer={this.stopTimer}
-          />
-        </div>
+
+        <TimeSettings
+          defaultWorkTime={this.state.defaultWorkTime}
+          defaultPauseTime={this.state.defaultPauseTime}
+          increaseWorkTime={this.increaseWorkTime}
+          decreaseWorkTime={this.decreaseWorkTime}
+          increasePauseTime={this.increasePauseTime}
+          decreasePauseTime={this.decreasePauseTime}
+        />
+        <Timer
+          defaultWorkTime={this.state.defaultWorkTime}
+          workTime={this.state.workTime}
+          pauseTime={this.state.pauseTime}
+          timerStarted={this.state.timerStarted}
+          isWorkTime={this.state.isWorkTime}
+        />
+        <TimerInfo
+          isWorkTime={this.state.isWorkTime}
+          timerStarted={this.state.timerStarted}
+        />
+        <TimerControls
+          startWorkTime={this.startWorkTime}
+          stopTimer={this.stopTimer}
+        />
       </div>
     );
   }
