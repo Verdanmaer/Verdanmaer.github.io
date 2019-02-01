@@ -1,6 +1,6 @@
 import React from "react";
 import Timer from "./Timer";
-import TimeSettings from "./TimerSettings";
+import TimerSettings from "./TimerSettings";
 import TimerControls from "./TimerControls";
 import TimerInfo from "./TimerInfo";
 
@@ -109,13 +109,14 @@ class App extends React.Component {
       <div className="container">
         <h1 className="title">Pomodoro clock</h1>
 
-        <TimeSettings
+        <TimerSettings
           defaultWorkTime={this.state.defaultWorkTime}
           defaultPauseTime={this.state.defaultPauseTime}
           increaseWorkTime={this.increaseWorkTime}
           decreaseWorkTime={this.decreaseWorkTime}
           increasePauseTime={this.increasePauseTime}
           decreasePauseTime={this.decreasePauseTime}
+          timerStarted={this.state.timerStarted}
         />
         <Timer
           defaultWorkTime={this.state.defaultWorkTime}
@@ -131,6 +132,7 @@ class App extends React.Component {
         <TimerControls
           startWorkTime={this.startWorkTime}
           stopTimer={this.stopTimer}
+          timerStarted={this.state.timerStarted}
         />
       </div>
     );

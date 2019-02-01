@@ -7,6 +7,7 @@ const TimerControls = props => {
         <button
           className="ui labeled icon button"
           onClick={props.startWorkTime}
+          disabled={props.timerStarted}
         >
           <i className="play circle icon" />
           Start
