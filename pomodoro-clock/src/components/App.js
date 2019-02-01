@@ -12,8 +12,8 @@ class App extends React.Component {
 
     this.timeInMinutes = 60000;
     this.state = {
-      defaultWorkTime: 0.1 * this.timeInMinutes,
-      defaultPauseTime: 0.1 * this.timeInMinutes,
+      defaultWorkTime: 25 * this.timeInMinutes,
+      defaultPauseTime: 5 * this.timeInMinutes,
       timerStarted: false,
       isWorkTime: false
     };
