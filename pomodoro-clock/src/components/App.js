@@ -4,14 +4,16 @@ import TimeSettings from "./TimerSettings";
 import TimerControls from "./TimerControls";
 import TimerInfo from "./TimerInfo";
 
+import soundfile from "../audio/beep.wav";
+
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.timeInMinutes = 60000;
     this.state = {
-      defaultWorkTime: 25 * this.timeInMinutes,
-      defaultPauseTime: 5 * this.timeInMinutes,
+      defaultWorkTime: 0.1 * this.timeInMinutes,
+      defaultPauseTime: 0.1 * this.timeInMinutes,
       timerStarted: false,
       isWorkTime: false
     };
@@ -64,6 +66,7 @@ class App extends React.Component {
           pauseTime: this.state.defaultPauseTime,
           isWorkTime: false
         });
+        this.playSound();
         this.startPauseTime();
       }
       this.setState(({ workTime }) => ({ workTime: workTime - 1000 }));
@@ -79,6 +82,7 @@ class App extends React.Component {
           workTime: this.state.defaultWorkTime,
           isWorkTime: true
         });
+        this.playSound();
         this.startWorkTime();
       }
       this.setState(({ pauseTime }) => ({ pauseTime: pauseTime - 1000 }));
@@ -93,6 +97,11 @@ class App extends React.Component {
       isWorkTime: false
     });
     window.clearInterval(this.countdownInterval);
+  };
+
+  playSound = () => {
+    let beep = new Audio(soundfile);
+    beep.play();
   };
 
   render() {
