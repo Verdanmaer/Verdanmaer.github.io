@@ -9,9 +9,18 @@
         margin: 0;
       }
       canvas {
-        background: rgb(18, 235, 152);
-        display: block;
-        margin: 0 auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1.5);
+        background-image: linear-gradient(
+            to bottom,
+            rgb(60, 55, 129),
+            rgba(78, 59, 247, 0.767)
+          ),
+          url("space.jpg");
+        background-size: cover;
+        border-radius: 5px;
       }
     </style>
   </head>
@@ -61,6 +70,7 @@
       let bounceAudio = new Audio("bounce.wav");
       let breakingBricksAudio = new Audio("breaking_bricks.wav");
 
+      ctx.fillStyle = "#d1ab2e";
       ctx.font = "30px Arial";
       ctx.textAlign = "center";
       ctx.fillText(
@@ -93,7 +103,7 @@
       function drawBall() {
         ctx.beginPath();
         ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
-        ctx.fillStyle = "#0095DD";
+        ctx.fillStyle = "#d1ab2e";
         ctx.fill();
         ctx.closePath();
 
@@ -136,7 +146,7 @@
           paddleWidth,
           paddleHeight
         );
-        ctx.fillStyle = "#0095DD";
+        ctx.fillStyle = "#d1ab2e";
         ctx.fill();
         ctx.closePath();
       }
@@ -160,7 +170,7 @@
               bricks[c][r].y = brickY;
               ctx.beginPath();
               ctx.rect(brickX, brickY, brickWidth, brickHeight);
-              ctx.fillStyle = "#0095DD";
+              ctx.fillStyle = "	#d1ab2e";
               ctx.fill();
               ctx.closePath();
             }
@@ -272,19 +282,19 @@
       ctx.textAlign = "start";
       function drawScore() {
         ctx.font = "16px Arial";
-        ctx.fillStyle = "#0095DD";
+        ctx.fillStyle = "#d1ab2e";
         ctx.fillText("Score: " + score, 30, 20);
       }
 
       function drawLives() {
         ctx.font = "16px Arial";
-        ctx.fillStyle = "#0095DD";
+        ctx.fillStyle = "#d1ab2e";
         ctx.fillText("Lives: " + lives, canvas.width - 90, 20);
       }
 
       function drawLevel() {
         ctx.font = "16px Arial";
-        ctx.fillStyle = "#0095DD";
+        ctx.fillStyle = "#d1ab2e";
         ctx.fillText("Level: " + level, canvas.width / 2 - 30, 20);
       }
 
