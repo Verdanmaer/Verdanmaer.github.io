@@ -1,138 +1,152 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta charset="utf-8" />
     <title>BreakoutGame</title>
     <style>
-    	* { padding: 0; margin: 0; }
-    	canvas { background: rgb(18, 235, 152); display: block; margin: 0 auto; }
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      canvas {
+        background: rgb(18, 235, 152);
+        display: block;
+        margin: 0 auto;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="480" height="320"></canvas>
 
-<canvas id="myCanvas" width="480" height="320"></canvas>
+    <script>
+      let canvas = document.getElementById("myCanvas");
+      let ctx = canvas.getContext("2d");
 
-<script>
-	let canvas = document.getElementById("myCanvas");
-    let ctx = canvas.getContext("2d");
+      //ball position
+      let x = canvas.width / 2;
+      let y = canvas.height - 30;
 
-    //ball position
-    let x = canvas.width/2;
-    let y = canvas.height-30;
+      //ball movement direction
+      let dx = 2;
+      let dy = -2;
 
-    //ball movement direction
-    let dx = 2;
-    let dy = -2;
+      let drawSpeed = 10;
 
-    let drawSpeed = 10;
+      let ballRadius = 10;
+      let ballLeftBorder = x - ballRadius;
+      let ballRightBorder = x + ballRadius;
+      let ballTopBorder = y - ballRadius;
+      let ballBotBorder = y + ballRadius;
 
-    let ballRadius = 10;
-    let ballLeftBorder = x - ballRadius;
-    let ballRightBorder = x + ballRadius;
-    let ballTopBorder = y - ballRadius;
-    let ballBotBorder = y + ballRadius;
+      let paddleHeight = 10;
+      let paddleWidth = 75;
+      let paddleX = (canvas.width - paddleWidth) / 2;
 
-    let paddleHeight = 10;
-    let paddleWidth = 75;
-    let paddleX = (canvas.width - paddleWidth) / 2;
+      let rightPressed = false;
+      let leftPressed = false;
 
-    let rightPressed = false;
-    let leftPressed = false;
+      let brickRowCount = 3;
+      let brickColumnCount = 5;
+      let brickWidth = 75;
+      let brickHeight = 20;
+      let brickPadding = 10;
+      let brickOffsetTop = 30;
+      let brickOffsetLeft = 30;
+      let bricks = [];
 
-    let brickRowCount = 3;
-    let brickColumnCount = 5;
-    let brickWidth = 75;
-    let brickHeight = 20;
-    let brickPadding = 10;
-    let brickOffsetTop = 30;
-    let brickOffsetLeft = 30;
-    let bricks = [];
+      let score = 0;
+      let lives = 3;
+      let level = 1;
 
-    let score = 0;
-    let lives = 3;
-    let level = 1;
+      let bounceAudio = new Audio("bounce.wav");
+      let breakingBricksAudio = new Audio("breaking_bricks.wav");
 
-    let bounceAudio = new Audio('bounce.wav');
-    let breakingBricksAudio = new Audio('breaking_bricks.wav');
-
-    function setDrawInterval () {
+      function setDrawInterval() {
         drawInterval = setInterval(draw, drawSpeed);
-    }
+      }
 
-    setDrawInterval();
-    setBricks();
+      setDrawInterval();
+      setBricks();
 
-    function drawBall() {
+      function drawBall() {
         ctx.beginPath();
-        ctx.arc(x, y, ballRadius, 0, Math.PI*2);
+        ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
         ctx.fillStyle = "#0095DD";
         ctx.fill();
         ctx.closePath();
-        
+
         //collisions with walls
         if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
-            dx = -dx;   
+          dx = -dx;
         }
 
         //collision with top
         if (y + dy < ballRadius) {
-            dy = -dy;
+          dy = -dy;
 
-        //collision with paddle
-        } else if (y + dy > canvas.height - paddleHeight 
-                && x > paddleX && x < paddleX + paddleWidth) {
-                    bounceAudio.play();
-                    dy = -dy;
-                    if (dx > 0) {
-                        dx = Math.random() * 4;
-                    } else {
-                        dx = Math.random() * (-4);
-                    }
+          //collision with paddle
+        } else if (
+          y + dy > canvas.height - paddleHeight &&
+          x > paddleX &&
+          x < paddleX + paddleWidth
+        ) {
+          bounceAudio.play();
+          dy = -dy;
+          if (dx > 0) {
+            dx = Math.random() * 4;
+          } else {
+            dx = Math.random() * -4;
+          }
 
-        //collision with bottom
+          //collision with bottom
         } else if (y + dy > canvas.height) {
-                lives--;
-                clearInterval(drawInterval);
-                setTimeout(reloadBall, 1000);
+          lives--;
+          clearInterval(drawInterval);
+          setTimeout(reloadBall, 1000);
         }
-    }
+      }
 
-    function drawPaddle() {
+      function drawPaddle() {
         ctx.beginPath();
-        ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
+        ctx.rect(
+          paddleX,
+          canvas.height - paddleHeight,
+          paddleWidth,
+          paddleHeight
+        );
         ctx.fillStyle = "#0095DD";
         ctx.fill();
         ctx.closePath();
-    }
+      }
 
-    function setBricks() {
+      function setBricks() {
         for (let c = 0; c < brickColumnCount; c++) {
-            bricks[c] = [];
-            for (let r = 0; r < brickRowCount; r++) {
-                bricks[c][r] = { x: 0, y: 0, status: 1 };
-            }
+          bricks[c] = [];
+          for (let r = 0; r < brickRowCount; r++) {
+            bricks[c][r] = { x: 0, y: 0, status: 1 };
+          }
         }
-    }
+      }
 
-    function drawBricks() {
+      function drawBricks() {
         for (let c = 0; c < brickColumnCount; c++) {
-            for (let r = 0; r < brickRowCount; r++) {
-                if (bricks[c][r].status == 1) {
-                    let brickX = (c*(brickWidth+brickPadding))+brickOffsetLeft;
-                    let brickY = (r*(brickHeight+brickPadding))+brickOffsetTop;                
-                    bricks[c][r].x = brickX;
-                    bricks[c][r].y = brickY;
-                    ctx.beginPath();
-                    ctx.rect(brickX, brickY, brickWidth, brickHeight);
-                    ctx.fillStyle = "#0095DD";                  
-                    ctx.fill();
-                    ctx.closePath();
-                }
+          for (let r = 0; r < brickRowCount; r++) {
+            if (bricks[c][r].status == 1) {
+              let brickX = c * (brickWidth + brickPadding) + brickOffsetLeft;
+              let brickY = r * (brickHeight + brickPadding) + brickOffsetTop;
+              bricks[c][r].x = brickX;
+              bricks[c][r].y = brickY;
+              ctx.beginPath();
+              ctx.rect(brickX, brickY, brickWidth, brickHeight);
+              ctx.fillStyle = "#0095DD";
+              ctx.fill();
+              ctx.closePath();
             }
+          }
         }
-    }
+      }
 
-    function draw() {
+      function draw() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         drawBricks();
         drawBall();
@@ -148,114 +162,121 @@
         ballTopBorder = y - ballRadius;
         ballBotBorder = y + ballRadius;
 
-        if(rightPressed && paddleX < canvas.width-paddleWidth) {
-            paddleX += 7;
+        if (rightPressed && paddleX < canvas.width - paddleWidth) {
+          paddleX += 7;
+        } else if (leftPressed && paddleX > 0) {
+          paddleX -= 7;
         }
-        else if(leftPressed && paddleX > 0) {
-            paddleX -= 7;
-        }
-    }
+      }
 
-    document.addEventListener("keydown", keyDownHandler, false);
-    document.addEventListener("keyup", keyUpHandler, false);
-    //document.addEventListener("mousemove", mouseMoveHandler, false);
+      document.addEventListener("keydown", keyDownHandler, false);
+      document.addEventListener("keyup", keyUpHandler, false);
+      //document.addEventListener("mousemove", mouseMoveHandler, false);
 
-    function keyDownHandler(e) {
+      function keyDownHandler(e) {
         if (e.keyCode == 39) {
-            rightPressed = true;
-        } else if(e.keyCode == 37) {
-            leftPressed = true;
+          rightPressed = true;
+        } else if (e.keyCode == 37) {
+          leftPressed = true;
         }
-    }
+      }
 
-    function keyUpHandler(e) {
+      function keyUpHandler(e) {
         if (e.keyCode == 39) {
-            rightPressed = false;
-        } else if(e.keyCode == 37) {
-            leftPressed = false;
+          rightPressed = false;
+        } else if (e.keyCode == 37) {
+          leftPressed = false;
         }
-    }
+      }
 
-    /*function mouseMoveHandler(e) {
+      /*function mouseMoveHandler(e) {
         let relativeX = e.clientX - canvas.offsetLeft;
         if (relativeX > 0 && relativeX < canvas.width) {
             paddleX = relativeX - paddleWidth / 2;
         }
     }*/
 
-    function horizontalCollision(b) {
+      function horizontalCollision(b) {
         this.b = b;
-        return ballRightBorder > b.x && ballLeftBorder < b.x + brickWidth && ballBotBorder + dy > b.y && ballTopBorder - dy < b.y + brickHeight;
-    }
+        return (
+          ballRightBorder > b.x &&
+          ballLeftBorder < b.x + brickWidth &&
+          ballBotBorder + dy > b.y &&
+          ballTopBorder - dy < b.y + brickHeight
+        );
+      }
 
-    function verticalCollision(b) {
+      function verticalCollision(b) {
         this.b = b;
-        return ballRightBorder > b.x && ballLeftBorder < b.x + brickWidth && ballBotBorder > b.y && ballTopBorder < b.y + brickHeight;
-    }
+        return (
+          ballRightBorder > b.x &&
+          ballLeftBorder < b.x + brickWidth &&
+          ballBotBorder > b.y &&
+          ballTopBorder < b.y + brickHeight
+        );
+      }
 
-    function collisionActions() {
+      function collisionActions() {
         score++;
         b.status = 0;
         breakingBricksAudio.play();
         if (score == brickRowCount * brickColumnCount * level) {
-            alert("Next Level!");
-            clearInterval(drawInterval);
-            drawSpeed -= 2;
-            level++;
-            setBricks();
-            reloadBall();
+          alert("Next Level!");
+          clearInterval(drawInterval);
+          drawSpeed -= 2;
+          level++;
+          setBricks();
+          reloadBall();
         }
-    }
+      }
 
-    function collisionDetection() {
+      function collisionDetection() {
         for (let c = 0; c < brickColumnCount; c++) {
-            for (let r = 0; r < brickRowCount; r++) {
-                let b = bricks[c][r];
-                if (b.status == 1) {
-                    if (horizontalCollision(b)) {
-                        dx = -dx;
-                        collisionActions();
-                    } else if (verticalCollision(b)) {
-                        dy = -dy;
-                        collisionActions();
-                    }
-                }
-                    
+          for (let r = 0; r < brickRowCount; r++) {
+            let b = bricks[c][r];
+            if (b.status == 1) {
+              if (horizontalCollision(b)) {
+                dx = -dx;
+                collisionActions();
+              } else if (verticalCollision(b)) {
+                dy = -dy;
+                collisionActions();
+              }
             }
+          }
         }
-    }
+      }
 
-    function drawScore() {
+      function drawScore() {
         ctx.font = "16px Arial";
         ctx.fillStyle = "#0095DD";
         ctx.fillText("Score: " + score, 8, 20);
-    }
+      }
 
-    function drawLives() {
+      function drawLives() {
         ctx.font = "16px Arial";
         ctx.fillStyle = "#0095DD";
         ctx.fillText("Lives: " + lives, canvas.width - 65, 20);
-    }
+      }
 
-    function drawLevel() {
+      function drawLevel() {
         ctx.font = "16px Arial";
-        ctx.fillStyle = '#0095DD';
-        ctx.fillText("Level: " + level, canvas.width/2 - 30 ,20);
-    }
+        ctx.fillStyle = "#0095DD";
+        ctx.fillText("Level: " + level, canvas.width / 2 - 30, 20);
+      }
 
-    function reloadBall () {
-        x = canvas.width/2;
-        y = canvas.height/2;
-        dx = Math.random()*4 - 2;
+      function reloadBall() {
+        x = canvas.width / 2;
+        y = canvas.height / 2;
+        dx = Math.random() * 4 - 2;
         dy = 2;
 
         if (lives === 0) {
-            alert("GAME OVER");
-            document.location.reload();
+          alert("GAME OVER");
+          document.location.reload();
         }
         setDrawInterval();
-    }
-</script>
-
-</body>
+      }
+    </script>
+  </body>
 </html>
