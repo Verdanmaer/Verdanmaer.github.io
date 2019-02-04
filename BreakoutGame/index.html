@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>BreakoutGame</title>
+    <title>Breakout Game</title>
     <style>
       * {
         padding: 0;
@@ -61,11 +61,33 @@
       let bounceAudio = new Audio("bounce.wav");
       let breakingBricksAudio = new Audio("breaking_bricks.wav");
 
+      ctx.font = "30px Arial";
+      ctx.textAlign = "center";
+      ctx.fillText(
+        "Press ENTER to start the game",
+        canvas.width / 2,
+        canvas.height / 2 - 30
+      );
+
+      ctx.font = "26px Arial";
+      ctx.fillText(
+        "Use ARROW KEYS to move the paddle",
+        canvas.width / 2,
+        canvas.height / 2 + 30
+      );
+
       function setDrawInterval() {
         drawInterval = setInterval(draw, drawSpeed);
       }
 
-      setDrawInterval();
+      document.addEventListener("keydown", startGame);
+      function startGame(e) {
+        if (e.keyCode === 13) {
+          setDrawInterval();
+          document.removeEventListener("keydown", startGame);
+        }
+      }
+
       setBricks();
 
       function drawBall() {
@@ -169,8 +191,8 @@
         }
       }
 
-      document.addEventListener("keydown", keyDownHandler, false);
-      document.addEventListener("keyup", keyUpHandler, false);
+      document.addEventListener("keydown", keyDownHandler);
+      document.addEventListener("keyup", keyUpHandler);
       //document.addEventListener("mousemove", mouseMoveHandler, false);
 
       function keyDownHandler(e) {
@@ -247,16 +269,17 @@
         }
       }
 
+      ctx.textAlign = "start";
       function drawScore() {
         ctx.font = "16px Arial";
         ctx.fillStyle = "#0095DD";
-        ctx.fillText("Score: " + score, 8, 20);
+        ctx.fillText("Score: " + score, 30, 20);
       }
 
       function drawLives() {
         ctx.font = "16px Arial";
         ctx.fillStyle = "#0095DD";
-        ctx.fillText("Lives: " + lives, canvas.width - 65, 20);
+        ctx.fillText("Lives: " + lives, canvas.width - 90, 20);
       }
 
       function drawLevel() {
