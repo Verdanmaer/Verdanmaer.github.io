@@ -34,10 +34,34 @@ body {
         font-size: 5rem;
         font-weight: 100;
         font-family: "Schoolbell", cursive;
+        animation: moveLeft 1.5s;
       }
       .intro-subtitle {
         font-size: 2rem;
         font-family: "Short Stack", cursive;
+        animation: moveDown 2s;
+      }
+
+      @keyframes moveLeft {
+        0% {
+          transform: translateX(5rem);
+        }
+        80% {
+          transform: translateX(-0.5rem);
+        }
+      }
+
+      @keyframes moveDown {
+        0% {
+          transform: translateY(-5rem);
+          opacity: 0;
+        }
+        70% {
+          opacity: 0.2;
+        }
+        100% {
+          top: 0;
+        }
       }
     }
     .arrow-down {
