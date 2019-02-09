@@ -1,6 +1,23 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
 @import url("https://fonts.googleapis.com/css?family=Short+Stack");
 @import url("https://fonts.googleapis.com/css?family=Schoolbell");
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+@mixin section-divider($color) {
+  &::after {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    z-index: 1;
+    width: 5rem;
+    height: 5rem;
+    margin-left: -25px;
+    margin-top: -25px;
+    content: "";
+    transform: rotate(45deg);
+    background-color: $color;
+  }
+}
 
 html {
   font-size: 62.5%;
@@ -15,12 +32,15 @@ body {
 .wrapper {
   min-width: 320px;
   width: 100%;
+  text-align: center;
+
   .intro {
     position: relative;
     width: 100%;
     height: 100vh;
     margin: 0;
-    background-color: rgb(214, 214, 214);
+    background-color: rgb(206, 206, 206);
+    @include section-divider(rgb(206, 206, 206));
     .intro-content {
       position: absolute;
       top: 40%;
@@ -28,8 +48,6 @@ body {
       transform: translate(-50%, -50%);
       width: 90%;
       color: black;
-      text-align: center;
-
       .intro-title {
         font-size: 5rem;
         font-weight: 100;
@@ -67,6 +85,7 @@ body {
     .arrow-down {
       position: absolute;
       top: 80%;
+      z-index: 2;
       width: 100%;
       height: 10%;
       text-align: center;
@@ -77,30 +96,48 @@ body {
   }
 
   .skills {
+    position: relative;
     margin: 0;
+    padding-top: 7.5rem;
     text-align: center;
+    line-height: 0;
     font-size: 12rem;
-    background: orangered;
-    color: black;
-
+    background-color: rgb(134, 134, 134);
+    color: rgb(41, 41, 41);
+    @include section-divider(rgb(134, 134, 134));
     .col-sm-6 {
-      margin: 1.5rem auto;
-    }
-    .logo {
-      width: 12rem;
+      margin: 3.5rem auto;
+      .logo {
+        width: 12rem;
+        opacity: 0.7;
+      }
     }
   }
 
   .showcase {
+    position: relative;
     margin: 0;
-    border-bottom: 1px solid black;
-    div {
-      padding: 0;
+    padding: 7.5rem 0;
+    background-color: rgb(187, 187, 187);
+    @include section-divider(rgb(187, 187, 187));
+    .projects {
+      margin: 3rem;
     }
   }
+
   .contact-me {
     margin: 0;
+    padding: 7.5rem 0;
   }
+}
+
+.section-heading {
+  font-size: 5rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+  text-transform: uppercase;
+  color: black;
 }
 
 .test {
