@@ -96,6 +96,11 @@ body {
       text-align: center;
       .fa-chevron-down {
         font-size: 8rem;
+        color: black;
+        cursor: pointer;
+        &:hover {
+          transform: scale(1.2) translateY(1rem);
+        }
       }
     }
   }

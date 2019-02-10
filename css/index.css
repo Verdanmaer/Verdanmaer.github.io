@@ -84,6 +84,11 @@ body .container-fluid {
 }
 .wrapper .intro .arrow-down .fa-chevron-down {
   font-size: 8rem;
+  color: black;
+  cursor: pointer;
+}
+.wrapper .intro .arrow-down .fa-chevron-down:hover {
+  transform: scale(1.2) translateY(1rem);
 }
 .wrapper .skills {
   position: relative;
