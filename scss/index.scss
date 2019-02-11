@@ -8,6 +8,8 @@ $section-skills-bgcolor: rgb(134, 134, 134);
 $section-showcase-bgcolor: rgb(187, 187, 187);
 $section-contact-bgcolor: red;
 
+$primary-color: #24292e;
+
 @mixin section-divider($color) {
   &::after {
     position: absolute;
@@ -52,7 +54,7 @@ body {
       left: 50%;
       transform: translate(-50%, -50%);
       width: 90%;
-      color: black;
+      color: $primary-color;
       .intro-title {
         font-size: 5rem;
         font-weight: 100;
@@ -96,7 +98,7 @@ body {
       text-align: center;
       .fa-chevron-down {
         font-size: 8rem;
-        color: black;
+        color: $primary-color;
         cursor: pointer;
         &:hover {
           transform: scale(1.2) translateY(1rem);
@@ -113,13 +115,12 @@ body {
     line-height: 0;
     font-size: 12rem;
     background-color: $section-skills-bgcolor;
-    color: rgb(41, 41, 41);
+    color: $primary-color;
     @include section-divider($section-skills-bgcolor);
     .col-sm-6 {
       margin: 3.5rem auto;
       .logo {
         width: 12rem;
-        opacity: 0.7;
       }
     }
   }
@@ -136,7 +137,7 @@ body {
       img {
         filter: brightness(0.4);
       }
-      .test {
+      .project-info {
         position: absolute;
         top: 40%;
         left: 50%;
@@ -146,13 +147,13 @@ body {
         opacity: 1;
         .badge {
           margin: 2px;
-          background-color: #24292e;
+          background-color: $primary-color;
         }
       }
       .github {
         font-size: 2.5rem;
         text-align: right;
-        background-color: #24292e;
+        background-color: $primary-color;
         .fa-github {
           color: white;
           margin-right: 1.5rem;
@@ -173,7 +174,7 @@ body {
   font-weight: 800;
   font-style: italic;
   text-transform: uppercase;
-  color: black;
+  color: $primary-color;
 }
 
 .github {

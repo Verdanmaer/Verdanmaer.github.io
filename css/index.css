@@ -41,7 +41,7 @@ body .container-fluid {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 90%;
-  color: black;
+  color: #24292e;
 }
 .wrapper .intro .intro-content .intro-title {
   font-size: 5rem;
@@ -84,7 +84,7 @@ body .container-fluid {
 }
 .wrapper .intro .arrow-down .fa-chevron-down {
   font-size: 8rem;
-  color: black;
+  color: #24292e;
   cursor: pointer;
 }
 .wrapper .intro .arrow-down .fa-chevron-down:hover {
@@ -98,7 +98,7 @@ body .container-fluid {
   line-height: 0;
   font-size: 12rem;
   background-color: #868686;
-  color: #292929;
+  color: #24292e;
 }
 .wrapper .skills::after {
   position: absolute;
@@ -118,7 +118,6 @@ body .container-fluid {
 }
 .wrapper .skills .col-sm-6 .logo {
   width: 12rem;
-  opacity: 0.7;
 }
 .wrapper .showcase {
   position: relative;
@@ -146,7 +145,7 @@ body .container-fluid {
 .wrapper .showcase .projects img {
   filter: brightness(0.4);
 }
-.wrapper .showcase .projects .test {
+.wrapper .showcase .projects .project-info {
   position: absolute;
   top: 40%;
   left: 50%;
@@ -155,7 +154,7 @@ body .container-fluid {
   text-align: center;
   opacity: 1;
 }
-.wrapper .showcase .projects .test .badge {
+.wrapper .showcase .projects .project-info .badge {
   margin: 2px;
   background-color: #24292e;
 }
@@ -179,7 +178,7 @@ body .container-fluid {
   font-weight: 800;
   font-style: italic;
   text-transform: uppercase;
-  color: black;
+  color: #24292e;
 }
 
 .github {
