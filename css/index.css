@@ -141,6 +141,32 @@ body .container-fluid {
 }
 .wrapper .showcase .projects {
   margin: 3rem;
+  clip-path: polygon(0 0, 70% 0, 100% 15%, 100% 100%, 30% 100%, 0 85%);
+}
+.wrapper .showcase .projects img {
+  filter: brightness(0.4);
+}
+.wrapper .showcase .projects .test {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  text-align: center;
+  opacity: 1;
+}
+.wrapper .showcase .projects .test .badge {
+  margin: 2px;
+  background-color: #24292e;
+}
+.wrapper .showcase .projects .github {
+  font-size: 2.5rem;
+  text-align: right;
+  background-color: #24292e;
+}
+.wrapper .showcase .projects .github .fa-github {
+  color: white;
+  margin-right: 1.5rem;
 }
 .wrapper .contact {
   margin: 0;
@@ -156,18 +182,12 @@ body .container-fluid {
   color: black;
 }
 
-.test {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  opacity: 0;
-  background: red;
+.github {
+  font-size: 3rem;
 }
 
-.col-sm-6:hover .test {
+/*.col-sm-6:hover .test {
   opacity: 1;
-}
+}*/
 
 /*# sourceMappingURL=index.css.map */

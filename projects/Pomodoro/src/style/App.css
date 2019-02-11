@@ -13,57 +13,48 @@ html {
   color: white;
   text-align: center;
   border-radius: 25px; }
-
-.container .title {
-  padding: 2rem;
-  font: 100 3.5rem "Montserrat", sans-serif;
-  letter-spacing: 5px;
-  word-spacing: 10px;
-  text-transform: uppercase;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.178); }
-
-.container .timer-settings {
-  display: inline-block;
-  margin: 22px 55px 0;
-  font-size: 2.5rem; }
-
-.container .timer-settings p {
-  display: inline-block;
-  margin: 20px 20px; }
-
-.container .timer-settings button {
-  background: none;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  padding: 0; }
-
-.container .timer-settings i {
-  color: white;
-  font-size: 3rem; }
-
-.container .timer {
-  padding: 1rem 0 0;
-  font: 100 5rem "Montserrat", sans-serif;
-  border-top: 2px solid rgba(255, 255, 255, 0.178); }
-
-.container .timer-info {
-  margin: 0 0 2rem;
-  padding-bottom: 2rem;
-  font-size: 2.5rem;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.178); }
-
-.container .timer-controls button {
-  width: 23rem;
-  min-width: 30%;
-  padding: 1rem;
-  margin: 1rem;
-  background-color: white;
-  color: #852222;
-  font-size: 1.5rem; }
-
-.container .timer-controls button i {
-  color: #852222; }
+  .container .title {
+    padding: 2rem;
+    font: 100 3.5rem "Montserrat", sans-serif;
+    letter-spacing: 5px;
+    word-spacing: 10px;
+    text-transform: uppercase;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.178); }
+  .container .timer-settings {
+    display: inline-block;
+    margin: 22px 55px 0;
+    font-size: 2.5rem; }
+    .container .timer-settings p {
+      display: inline-block;
+      margin: 20px 20px; }
+    .container .timer-settings button {
+      background: none;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      padding: 0; }
+    .container .timer-settings i {
+      color: white;
+      font-size: 3rem; }
+  .container .timer {
+    padding: 1rem 0 0;
+    font: 100 5rem "Montserrat", sans-serif;
+    border-top: 2px solid rgba(255, 255, 255, 0.178); }
+  .container .timer-info {
+    margin: 0 0 2rem;
+    padding-bottom: 2rem;
+    font-size: 2.5rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.178); }
+  .container .timer-controls button {
+    width: 23rem;
+    min-width: 30%;
+    padding: 1rem;
+    margin: 1rem;
+    background-color: white;
+    color: #852222;
+    font-size: 1.5rem; }
+    .container .timer-controls button i {
+      color: #852222; }
 
 @media only screen and (max-width: 536px) and (orientation: portrait) {
   .container {
@@ -75,12 +66,12 @@ html {
     min-height: 100%;
     padding: 0;
     border-radius: 0; }
-  .container .title {
-    font-size: 3.5rem; }
-  .container .timer-settings {
-    font-size: 3rem; }
-  .container .timer-controls button {
-    width: 70%; } }
+    .container .title {
+      font-size: 3.5rem; }
+    .container .timer-settings {
+      font-size: 3rem; }
+    .container .timer-controls button {
+      width: 70%; } }
 
 @media only screen and (max-device-width: 1000px) and (orientation: landscape) {
   .container {
@@ -91,27 +82,27 @@ html {
     height: 100%;
     border-radius: 0;
     overflow-y: scroll; }
-  .container .title {
-    margin: 0;
-    padding: 1rem;
-    font-size: 3rem; }
-  .container .timer-settings {
-    font-size: 2rem; }
-  .container .timer-info {
-    margin: 0.5rem;
-    padding: 0; }
-  .container .timer-controls {
-    display: flex; }
-  .container .timer-controls > * {
-    margin: 0 auto; } }
+    .container .title {
+      margin: 0;
+      padding: 1rem;
+      font-size: 3rem; }
+    .container .timer-settings {
+      font-size: 2rem; }
+    .container .timer-info {
+      margin: 0.5rem;
+      padding: 0; }
+    .container .timer-controls {
+      display: flex; }
+      .container .timer-controls > * {
+        margin: 0 auto; } }
 
 @media (min-width: 536px) and (max-width: 1420px) {
   .container {
     width: 70%;
     max-height: 100%;
     padding: 1rem; }
-  .container .title {
-    font-size: 3rem; } }
+    .container .title {
+      font-size: 3rem; } }
 
 @media (min-width: 1420px) {
   .container {
