@@ -135,7 +135,7 @@ body {
       margin: 3rem;
       clip-path: polygon(0 0, 70% 0, 100% 15%, 100% 100%, 30% 100%, 0 85%);
       img {
-        filter: brightness(0.4);
+        filter: brightness(0.5);
       }
       .project-info {
         position: absolute;
@@ -144,9 +144,11 @@ body {
         transform: translate(-50%, -50%);
         font-size: 2rem;
         text-align: center;
+        line-height: 0;
         opacity: 1;
         .badge {
-          margin: 2px;
+          margin: 1px;
+          padding: 6px;
           background-color: $primary-color;
         }
       }
@@ -175,10 +177,6 @@ body {
   font-style: italic;
   text-transform: uppercase;
   color: $primary-color;
-}
-
-.github {
-  font-size: 3rem;
 }
 
 /*.col-sm-6:hover .test {
