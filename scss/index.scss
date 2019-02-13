@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
 @import url("https://fonts.googleapis.com/css?family=Short+Stack");
 @import url("https://fonts.googleapis.com/css?family=Schoolbell");
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
@@ -129,33 +128,34 @@ body {
     background-color: $primary-bgcolor;
     @include section-divider($primary-bgcolor);
     .projects {
-      margin: 3rem;
-      clip-path: polygon(0 0, 70% 0, 100% 15%, 100% 100%, 30% 100%, 0 85%);
-      img {
-        filter: brightness(0.5);
-      }
-      .project-info {
-        position: absolute;
-        top: 40%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 2rem;
-        text-align: center;
-        line-height: 0;
-        opacity: 1;
-        .badge {
-          margin: 1px;
-          padding: 6px;
-          background-color: $primary-color;
+      .spacer {
+        margin: 3rem;
+        img {
+          filter: brightness(0.5);
         }
-      }
-      .github {
-        font-size: 2.5rem;
-        text-align: right;
-        background-color: $primary-color;
-        .fa-github {
-          color: white;
-          margin-right: 1.5rem;
+        .project-info {
+          position: absolute;
+          top: 45%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          text-align: center;
+          line-height: 0;
+          font-size: 2rem;
+          opacity: 1;
+          .badge {
+            margin: 1px;
+            padding: 6px;
+            background-color: $primary-color;
+          }
+        }
+        .github {
+          text-align: right;
+          font-size: 2.5rem;
+          background-color: $primary-color;
+          .fa-github {
+            margin-right: 1.5rem;
+            color: white;
+          }
         }
       }
     }
@@ -164,13 +164,19 @@ body {
   .contact {
     margin: 0;
     padding: 7.5rem 0 2rem;
-    background-color: $secondary-bgcolor;
     font-size: 2rem;
+    background-color: $secondary-bgcolor;
     .contact-form {
       margin-top: 3rem;
       text-align: left;
+      .form-group {
+        .form-control {
+          font-size: 3rem;
+        }
+      }
       .send-button {
         float: right;
+        margin-top: 5px;
         border: none;
         background-color: $primary-color;
         .fa-envelope {
@@ -179,16 +185,75 @@ body {
       }
     }
   }
+
+  .section-heading {
+    font-size: 4.2rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    font-style: italic;
+    text-transform: uppercase;
+  }
 }
 
-.section-heading {
-  font-size: 4.2rem;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 800;
-  font-style: italic;
-  text-transform: uppercase;
+@media only screen and (min-width: 768px) {
+  .wrapper {
+    section {
+      &:not(:first-child) {
+        padding: 7.5rem 5rem;
+      }
+    }
+  }
 }
 
-/*.col-sm-6:hover .test {
-  opacity: 1;
-}*/
+@media only screen and (min-width: 1024px) {
+  .wrapper {
+    section {
+      &:not(:first-child) {
+        padding: 7.5rem 15rem;
+      }
+    }
+    .showcase {
+      .projects {
+        .spacer {
+          .project-info {
+            opacity: 0;
+          }
+        }
+        .spacer:hover {
+          .project-info {
+            animation: fadeIn 0.75s;
+            animation-fill-mode: forwards;
+          }
+        }
+        @keyframes fadeIn {
+          100% {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .wrapper {
+    section {
+      &:not(:first-child) {
+        padding: 7.5rem 25rem;
+      }
+    }
+    .contact {
+      font-size: 2.6rem;
+    }
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .wrapper {
+    section {
+      &:not(:first-child) {
+        padding: 7.5rem 55rem;
+      }
+    }
+  }
+}
