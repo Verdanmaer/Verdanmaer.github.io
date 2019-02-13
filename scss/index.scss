@@ -3,10 +3,8 @@
 @import url("https://fonts.googleapis.com/css?family=Schoolbell");
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 
-$section-intro-bgcolor: rgb(206, 206, 206);
-$section-skills-bgcolor: rgb(134, 134, 134);
-$section-showcase-bgcolor: rgb(187, 187, 187);
-$section-contact-bgcolor: red;
+$primary-bgcolor: rgb(206, 206, 206);
+$secondary-bgcolor: rgb(134, 134, 134);
 
 $primary-color: #24292e;
 
@@ -28,6 +26,7 @@ $primary-color: #24292e;
 
 html {
   font-size: 62.5%;
+  color: $primary-color;
 }
 
 body {
@@ -46,15 +45,14 @@ body {
     width: 100%;
     height: 100vh;
     margin: 0;
-    background-color: $section-intro-bgcolor;
-    @include section-divider($section-intro-bgcolor);
+    background-color: $primary-bgcolor;
+    @include section-divider($primary-bgcolor);
     .intro-content {
       position: absolute;
       top: 40%;
       left: 50%;
       transform: translate(-50%, -50%);
       width: 90%;
-      color: $primary-color;
       .intro-title {
         font-size: 5rem;
         font-weight: 100;
@@ -69,7 +67,7 @@ body {
 
       @keyframes moveLeft {
         0% {
-          transform: translateX(5rem);
+          transform: translateX(4.5rem);
         }
         80% {
           transform: translateX(-0.5rem);
@@ -114,9 +112,8 @@ body {
     text-align: center;
     line-height: 0;
     font-size: 12rem;
-    background-color: $section-skills-bgcolor;
-    color: $primary-color;
-    @include section-divider($section-skills-bgcolor);
+    background-color: $secondary-bgcolor;
+    @include section-divider($secondary-bgcolor);
     .col-sm-6 {
       margin: 3.5rem auto;
       .logo {
@@ -129,8 +126,8 @@ body {
     position: relative;
     margin: 0;
     padding: 7.5rem 0;
-    background-color: $section-showcase-bgcolor;
-    @include section-divider($section-showcase-bgcolor);
+    background-color: $primary-bgcolor;
+    @include section-divider($primary-bgcolor);
     .projects {
       margin: 3rem;
       clip-path: polygon(0 0, 70% 0, 100% 15%, 100% 100%, 30% 100%, 0 85%);
@@ -166,17 +163,30 @@ body {
 
   .contact {
     margin: 0;
-    padding: 7.5rem 0;
+    padding: 7.5rem 0 2rem;
+    background-color: $secondary-bgcolor;
+    font-size: 2rem;
+    .contact-form {
+      margin-top: 3rem;
+      text-align: left;
+      .send-button {
+        float: right;
+        border: none;
+        background-color: $primary-color;
+        .fa-envelope {
+          margin: 0 5px;
+        }
+      }
+    }
   }
 }
 
 .section-heading {
-  font-size: 5rem;
+  font-size: 4.2rem;
   font-family: "Montserrat", sans-serif;
   font-weight: 800;
   font-style: italic;
   text-transform: uppercase;
-  color: $primary-color;
 }
 
 /*.col-sm-6:hover .test {

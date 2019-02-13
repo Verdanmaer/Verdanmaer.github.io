@@ -4,6 +4,7 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 html {
   font-size: 62.5%;
+  color: #24292e;
 }
 
 body .container-fluid {
@@ -41,7 +42,6 @@ body .container-fluid {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 90%;
-  color: #24292e;
 }
 .wrapper .intro .intro-content .intro-title {
   font-size: 5rem;
@@ -56,7 +56,7 @@ body .container-fluid {
 }
 @keyframes moveLeft {
   0% {
-    transform: translateX(5rem);
+    transform: translateX(4.5rem);
   }
   80% {
     transform: translateX(-0.5rem);
@@ -98,7 +98,6 @@ body .container-fluid {
   line-height: 0;
   font-size: 12rem;
   background-color: #868686;
-  color: #24292e;
 }
 .wrapper .skills::after {
   position: absolute;
@@ -123,7 +122,7 @@ body .container-fluid {
   position: relative;
   margin: 0;
   padding: 7.5rem 0;
-  background-color: #bbbbbb;
+  background-color: #cecece;
 }
 .wrapper .showcase::after {
   position: absolute;
@@ -136,7 +135,7 @@ body .container-fluid {
   margin-top: -25px;
   content: "";
   transform: rotate(45deg);
-  background-color: #bbbbbb;
+  background-color: #cecece;
 }
 .wrapper .showcase .projects {
   margin: 3rem;
@@ -171,16 +170,29 @@ body .container-fluid {
 }
 .wrapper .contact {
   margin: 0;
-  padding: 7.5rem 0;
+  padding: 7.5rem 0 2rem;
+  background-color: #868686;
+  font-size: 2rem;
+}
+.wrapper .contact .contact-form {
+  margin-top: 3rem;
+  text-align: left;
+}
+.wrapper .contact .contact-form .send-button {
+  float: right;
+  border: none;
+  background-color: #24292e;
+}
+.wrapper .contact .contact-form .send-button .fa-envelope {
+  margin: 0 5px;
 }
 
 .section-heading {
-  font-size: 5rem;
+  font-size: 4.2rem;
   font-family: "Montserrat", sans-serif;
   font-weight: 800;
   font-style: italic;
   text-transform: uppercase;
-  color: #24292e;
 }
 
 /*.col-sm-6:hover .test {
