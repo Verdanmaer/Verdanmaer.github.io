@@ -1,4 +1,5 @@
 $(function() {
+  // Smooth scroll
   $(".arrow-down-link").on("click", function(event) {
     if (this.hash !== "") {
       event.preventDefault();
