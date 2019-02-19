@@ -92,12 +92,13 @@ body .container-fluid {
 }
 .wrapper .skills {
   position: relative;
+  height: 100vh;
   margin: 0;
   padding-top: 7.5rem;
   text-align: center;
   line-height: 0;
   font-size: 12rem;
-  background-color: #868686;
+  background-color: #c8d0d1;
 }
 .wrapper .skills::after {
   position: absolute;
@@ -110,7 +111,7 @@ body .container-fluid {
   margin-top: -25px;
   content: "";
   transform: rotate(45deg);
-  background-color: #868686;
+  background-color: #c8d0d1;
 }
 .wrapper .skills .col-sm-6 {
   margin: 3.5rem auto;
@@ -172,7 +173,7 @@ body .container-fluid {
   margin: 0;
   padding: 7.5rem 0 2rem;
   font-size: 2rem;
-  background-color: #868686;
+  background-color: #c8d0d1;
 }
 .wrapper .contact .contact-form {
   margin-top: 3rem;
@@ -230,8 +231,15 @@ body .container-fluid {
   .wrapper section:not(:first-child) {
     padding: 7.5rem 15rem;
   }
+  .wrapper .showcase .projects .spacer .project-screenshot {
+    overflow: hidden;
+  }
   .wrapper .showcase .projects .spacer .project-info {
     opacity: 0;
+  }
+  .wrapper .showcase .projects .spacer:hover img {
+    transform: scale(1.1);
+    transition: all 0.3s;
   }
   .wrapper .showcase .projects .spacer:hover .project-info {
     animation: fadeIn 0.75s;

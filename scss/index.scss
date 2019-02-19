@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 
 $primary-bgcolor: rgb(230, 230, 230);
-$secondary-bgcolor: rgb(134, 134, 134);
+$secondary-bgcolor: rgb(200, 208, 209);
 
 $primary-color: #24292e;
 
@@ -107,6 +107,7 @@ body {
 
   .skills {
     position: relative;
+    height: 100vh;
     margin: 0;
     padding-top: 7.5rem;
     text-align: center;
@@ -240,23 +241,26 @@ body {
         padding: 7.5rem 15rem;
       }
     }
-    .showcase {
-      .projects {
-        .spacer {
-          .project-info {
-            opacity: 0;
-          }
+    .showcase .projects .spacer {
+      .project-screenshot {
+        overflow: hidden;
+      }
+      .project-info {
+        opacity: 0;
+      }
+      &:hover {
+        img {
+          transform: scale(1.1);
+          transition: all 0.3s;
         }
-        .spacer:hover {
-          .project-info {
-            animation: fadeIn 0.75s;
-            animation-fill-mode: forwards;
-          }
+        .project-info {
+          animation: fadeIn 0.75s;
+          animation-fill-mode: forwards;
         }
-        @keyframes fadeIn {
-          100% {
-            opacity: 1;
-          }
+      }
+      @keyframes fadeIn {
+        100% {
+          opacity: 1;
         }
       }
     }
