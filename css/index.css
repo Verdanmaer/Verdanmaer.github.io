@@ -138,6 +138,7 @@ body .container-fluid {
 }
 .wrapper .showcase .projects .spacer {
   margin: 3rem;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 1rem 1rem 8px rgba(36, 41, 46, 0.6);
 }
 .wrapper .showcase .projects .spacer img {
   filter: brightness(0.5);
@@ -177,16 +178,37 @@ body .container-fluid {
   text-align: left;
 }
 .wrapper .contact .contact-form .form-group .form-control {
-  font-size: 3rem;
+  padding: 1rem;
+  font-size: 2rem;
+  border-color: #24292e;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 1rem 1rem 8px rgba(36, 41, 46, 0.6);
+}
+.wrapper .contact .contact-form .form-group .form-control:hover {
+  animation: changeBackground 0.4s;
+  animation-fill-mode: forwards;
+}
+.wrapper .contact .contact-form .form-group .form-control:focus {
+  outline: 3px solid rgba(1, 126, 1, 0.541);
+}
+.wrapper .contact .contact-form .form-group .form-control:focus:invalid {
+  outline: 3px solid rgba(255, 0, 0, 0.432);
+}
+@keyframes changeBackground {
+  100% {
+    background-color: #cecece;
+  }
 }
 .wrapper .contact .contact-form .send-button {
   float: right;
-  margin-top: 5px;
+  margin-top: 2rem;
+  padding: 3px 1rem;
   border: none;
   background-color: #24292e;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 1rem 1rem 8px rgba(36, 41, 46, 0.6);
+  cursor: pointer;
 }
 .wrapper .contact .contact-form .send-button .fa-envelope {
-  margin: 0 5px;
+  margin: 0 1rem;
 }
 .wrapper .section-heading {
   font-size: 4.2rem;
@@ -194,6 +216,7 @@ body .container-fluid {
   font-weight: 800;
   font-style: italic;
   text-transform: uppercase;
+  text-shadow: 3px 3px 3px rgba(36, 41, 46, 0.5);
 }
 
 @media only screen and (min-width: 768px) {
