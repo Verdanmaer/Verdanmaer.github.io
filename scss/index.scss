@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css?family=Schoolbell");
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 
-$primary-bgcolor: rgb(206, 206, 206);
+$primary-bgcolor: rgb(230, 230, 230);
 $secondary-bgcolor: rgb(134, 134, 134);
 
 $primary-color: #24292e;
@@ -52,6 +52,7 @@ body {
       left: 50%;
       transform: translate(-50%, -50%);
       width: 90%;
+      border-bottom: 2px solid $primary-color;
       .intro-title {
         font-size: 5rem;
         font-weight: 100;
@@ -178,14 +179,15 @@ body {
           border-color: $primary-color;
           box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
             1rem 1rem 8px rgba($primary-color, 0.6);
+          transition: all 0.3s;
           &:hover {
             animation: changeBackground 0.4s;
             animation-fill-mode: forwards;
           }
           &:focus {
-            outline: 3px solid rgba(1, 126, 1, 0.541);
+            outline: 4px solid rgba(1, 126, 1, 0.541);
             &:invalid {
-              outline: 3px solid rgba(255, 0, 0, 0.432);
+              outline: 4px solid rgba(255, 0, 0, 0.432);
             }
           }
           @keyframes changeBackground {
