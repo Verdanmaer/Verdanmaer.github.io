@@ -92,6 +92,7 @@ body .container-fluid {
 }
 .wrapper .skills {
   position: relative;
+  min-height: 100vh;
   margin: 0;
   padding-top: 7.5rem;
   text-align: center;
@@ -214,6 +215,12 @@ body .container-fluid {
 }
 .wrapper .contact .contact-form .send-button:hover .fa-envelope {
   transform: translateX(3rem);
+}
+.wrapper .contact .contact-form .send-button:active {
+  transform: translateY(4px);
+}
+.wrapper .contact .contact-form .send-button:active .fa-envelope {
+  color: #9e9e9e;
 }
 .wrapper .contact .contact-form .send-button .fa-envelope {
   margin: 0 1rem;

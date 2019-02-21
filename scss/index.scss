@@ -207,13 +207,18 @@ body {
         box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
           1rem 1rem 8px rgba($primary-color, 0.6);
         cursor: pointer;
-        // TODO :active
         &:hover {
           .send-button__text {
             color: transparent;
           }
           .fa-envelope {
             transform: translateX(3rem);
+          }
+        }
+        &:active {
+          transform: translateY(4px);
+          .fa-envelope {
+            color: rgb(158, 158, 158);
           }
         }
         .fa-envelope {
