@@ -99,7 +99,7 @@ body .container-fluid {
   text-align: center;
   line-height: 0;
   font-size: 12rem;
-  background-color: #70a4b4;
+  background-color: #a4a5a4;
 }
 .wrapper .skills .col-sm-6 {
   margin: 3.5rem auto;
@@ -150,7 +150,7 @@ body .container-fluid {
   margin: 0;
   padding: 7.5rem 0 2rem;
   font-size: 2rem;
-  background-color: #70a4b4;
+  background-color: #a4a5a4;
 }
 .wrapper .contact .contact-form {
   margin-top: 3rem;
@@ -230,6 +230,7 @@ body .container-fluid {
   .wrapper .showcase .projects .spacer:hover img {
     transform: scale(1.1);
     transition: all 0.3s;
+    filter: brightness(0.85);
   }
   .wrapper .showcase .projects .spacer:hover .project-info {
     animation: fadeIn 0.75s;

@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 
 $primary-bgcolor: rgb(230, 230, 230);
-$secondary-bgcolor: rgb(112, 164, 180);
+$secondary-bgcolor: rgb(164, 165, 164);
 
 $primary-color: #24292e;
 
@@ -298,6 +298,7 @@ body {
         img {
           transform: scale(1.1);
           transition: all 0.3s;
+          filter: brightness(0.85);
         }
         .project-info {
           animation: fadeIn 0.75s;
