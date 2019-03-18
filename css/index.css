@@ -99,7 +99,7 @@ body .container-fluid {
   text-align: center;
   line-height: 0;
   font-size: 12rem;
-  background-color: #a4a5a4;
+  background-image: linear-gradient(lightgray 0%, #a5a5a4 1% 99%, lightgray 100%);
 }
 .wrapper .skills .col-sm-6 {
   margin: 3.5rem auto;
@@ -150,7 +150,7 @@ body .container-fluid {
   margin: 0;
   padding: 7.5rem 0 2rem;
   font-size: 2rem;
-  background-color: #a4a5a4;
+  background-image: linear-gradient(lightgray 0%, #a5a5a4 1%);
 }
 .wrapper .contact .contact-form {
   margin-top: 3rem;
@@ -210,6 +210,7 @@ body .container-fluid {
   font-style: italic;
   text-transform: uppercase;
   text-shadow: 3px 3px 3px rgba(36, 41, 46, 0.5);
+  margin: 2rem 0;
 }
 
 @media only screen and (min-width: 768px) {

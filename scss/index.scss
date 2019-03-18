@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 
 $primary-bgcolor: rgb(230, 230, 230);
-$secondary-bgcolor: rgb(164, 165, 164);
+$secondary-bgcolor: rgb(165, 165, 164);
 
 $primary-color: #24292e;
 
@@ -135,7 +135,12 @@ body {
     text-align: center;
     line-height: 0;
     font-size: 12rem;
-    background-color: $secondary-bgcolor;
+    background-image: linear-gradient(
+      rgb(211, 211, 211) 0%,
+      $secondary-bgcolor 1% 99%,
+      rgb(211, 211, 211) 100%
+    );
+    //background-color: $secondary-bgcolor;
     //@include section-divider($secondary-bgcolor);
     .col-sm-6 {
       margin: 3.5rem auto;
@@ -200,7 +205,11 @@ body {
     margin: 0;
     padding: 7.5rem 0 2rem;
     font-size: 2rem;
-    background-color: $secondary-bgcolor;
+    background-image: linear-gradient(
+      rgb(211, 211, 211) 0%,
+      $secondary-bgcolor 1%
+    );
+    //background-color: $secondary-bgcolor;
     .contact-form {
       margin-top: 3rem;
       text-align: left;
@@ -267,6 +276,7 @@ body {
     font-style: italic;
     text-transform: uppercase;
     text-shadow: 3px 3px 3px rgba($primary-color, 0.5);
+    margin: 2rem 0;
   }
 }
 
