@@ -59,9 +59,9 @@ body {
     height: 100vh;
     margin: 0;
     background-image: linear-gradient(
-        rgba($primary-bgcolor, 0.9) 0%,
-        $primary-bgcolor 35%,
-        rgba($primary-bgcolor, 0.9) 75%
+        rgba($primary-bgcolor, 0.7) 0%,
+        rgba($primary-bgcolor, 0.95) 38%,
+        rgba($primary-bgcolor, 0.7) 75%
       ),
       url("../img/test.jpg");
     background-size: cover;
@@ -156,9 +156,9 @@ body {
     padding: 7.5rem 0;
 
     background-image: linear-gradient(
-        rgba($primary-bgcolor, 0.9) 0%,
-        $primary-bgcolor 35%,
-        rgba($primary-bgcolor, 0.9) 75%
+        rgba($primary-bgcolor, 0.7) 0%,
+        rgba($primary-bgcolor, 0.95) 35%,
+        rgba($primary-bgcolor, 0.7) 75%
       ),
       url("../img/test.jpg");
     background-size: cover;
