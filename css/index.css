@@ -48,7 +48,7 @@ body .container-fluid {
   padding: 2rem 5rem;
   border: 1px solid black;
   border-radius: 2%;
-  background-image: url("../notebook.png");
+  background-image: url("../img/bg-texture.png");
 }
 .wrapper .intro .intro-content .intro-title {
   font-size: 5rem;
@@ -105,7 +105,7 @@ body .container-fluid {
   text-align: center;
   line-height: 0;
   font-size: 12rem;
-  background-image: url("../notebook.png");
+  background-image: url("../img/bg-texture.png");
 }
 .wrapper .skills .col-sm-6 {
   margin: 3.5rem auto;
@@ -156,7 +156,7 @@ body .container-fluid {
   margin: 0;
   padding: 3rem 0 2rem;
   font-size: 2rem;
-  background-image: url("../notebook.png");
+  background-image: url("../img/bg-texture.png");
 }
 .wrapper .contact .contact-form {
   margin-top: 3rem;
@@ -210,13 +210,15 @@ body .container-fluid {
   transition: all 0.3s;
 }
 .wrapper .section-heading {
-  font-size: 4.2rem;
+  font-size: 5rem;
   font-family: "Montserrat", sans-serif;
   font-weight: 800;
   font-style: italic;
   text-transform: uppercase;
+  color: #000000;
   text-shadow: 3px 3px 3px rgba(36, 41, 46, 0.5);
   margin: 1rem 0 2rem;
+  border-bottom: 3px solid black;
 }
 
 @media only screen and (min-width: 768px) {
