@@ -1,6 +1,21 @@
 @import url("https://fonts.googleapis.com/css?family=Short+Stack");
 @import url("https://fonts.googleapis.com/css?family=Schoolbell");
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
+/*@mixin section-divider($color) {
+  &::after {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    z-index: 1;
+    width: 5rem;
+    height: 5rem;
+    margin-left: -25px;
+    margin-top: -25px;
+    content: "";
+    transform: rotate(45deg);
+    background-color: $color;
+  }
+}*/
 html {
   font-size: 62.5%;
   color: #24292e;
@@ -11,11 +26,8 @@ body .container-fluid {
 }
 
 .parallax {
-  /* The image used */
-  background-image: url("../img/test.jpg");
-  /* Set a specific height */
+  background-image: linear-gradient(rgba(196, 196, 196, 0.4), rgba(196, 196, 196, 0.6)), url("../img/bgimage.jpg");
   min-height: 500px;
-  /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -32,17 +44,18 @@ body .container-fluid {
   width: 100%;
   height: 100vh;
   margin: 0;
-  background-image: linear-gradient(rgba(230, 230, 230, 0.7) 0%, rgba(230, 230, 230, 0.95) 38%, rgba(230, 230, 230, 0.7) 75%), url("../img/test.jpg");
   background-size: cover;
-  background-position: top;
+  background-position: bottom;
 }
 .wrapper .intro .intro-content {
   position: absolute;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 90%;
-  border-bottom: 2px solid #24292e;
+  padding: 10rem;
+  border: 1px solid black;
+  border-radius: 2%;
+  background-image: url("../notebook.png");
 }
 .wrapper .intro .intro-content .intro-title {
   font-size: 5rem;
@@ -95,11 +108,10 @@ body .container-fluid {
   position: relative;
   min-height: 100vh;
   margin: 0;
-  padding-top: 7.5rem;
   text-align: center;
   line-height: 0;
   font-size: 12rem;
-  background-image: linear-gradient(lightgray 0%, #a5a5a4 1% 99%, lightgray 100%);
+  background-image: url("../notebook.png");
 }
 .wrapper .skills .col-sm-6 {
   margin: 3.5rem auto;
@@ -111,9 +123,6 @@ body .container-fluid {
   position: relative;
   margin: 0;
   padding: 7.5rem 0;
-  background-image: linear-gradient(rgba(230, 230, 230, 0.7) 0%, rgba(230, 230, 230, 0.95) 35%, rgba(230, 230, 230, 0.7) 75%), url("../img/test.jpg");
-  background-size: cover;
-  background-position: top;
 }
 .wrapper .showcase .projects .spacer {
   margin: 3rem;
@@ -150,7 +159,7 @@ body .container-fluid {
   margin: 0;
   padding: 7.5rem 0 2rem;
   font-size: 2rem;
-  background-image: linear-gradient(lightgray 0%, #a5a5a4 1%);
+  background-image: url("../notebook.png");
 }
 .wrapper .contact .contact-form {
   margin-top: 3rem;
@@ -175,7 +184,7 @@ body .container-fluid {
 }
 @keyframes changeBackground {
   100% {
-    background-color: #e6e6e6;
+    background-color: #c5c5c5;
   }
 }
 .wrapper .contact .contact-form .send-button {
@@ -210,17 +219,17 @@ body .container-fluid {
   font-style: italic;
   text-transform: uppercase;
   text-shadow: 3px 3px 3px rgba(36, 41, 46, 0.5);
-  margin: 2rem 0;
+  margin: 1rem 0 2rem;
 }
 
 @media only screen and (min-width: 768px) {
   .wrapper section:not(:first-child) {
-    padding: 7.5rem 5rem;
+    padding: 5rem 5rem;
   }
 }
 @media only screen and (min-width: 1024px) {
   .wrapper section:not(:first-child) {
-    padding: 7.5rem 15rem;
+    padding: 5rem 15rem;
   }
   .wrapper .showcase .projects .spacer .project-screenshot {
     overflow: hidden;
@@ -245,7 +254,7 @@ body .container-fluid {
 }
 @media only screen and (min-width: 1440px) {
   .wrapper section:not(:first-child) {
-    padding: 7.5rem 25rem;
+    padding: 5rem 25rem;
   }
   .wrapper .contact {
     font-size: 2.6rem;
@@ -253,7 +262,7 @@ body .container-fluid {
 }
 @media only screen and (min-width: 1920px) {
   .wrapper section:not(:first-child) {
-    padding: 7.5rem 55rem;
+    padding: 5rem 55rem;
   }
 }
 
