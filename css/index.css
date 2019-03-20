@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Short+Stack");
 @import url("https://fonts.googleapis.com/css?family=Schoolbell");
-@import url("https://fonts.googleapis.com/css?family=Montserrat");
 @import url("https://fonts.googleapis.com/css?family=Roboto+Slab");
 /*@mixin section-divider($color) {
   &::after {
@@ -71,7 +70,7 @@ body .container-fluid {
 .wrapper .intro .intro-content .intro-subtitle {
   font-size: 2rem;
   font-family: "Short Stack", cursive;
-  color: #8d8d8d;
+  color: #666666;
   animation: moveDown 2s;
 }
 @keyframes moveLeft {
@@ -117,14 +116,14 @@ body .container-fluid {
   text-align: center;
   line-height: 0;
   font-size: 10rem;
-  color: #8d8d8d;
+  color: #666666;
   background-color: white;
 }
 .wrapper .skills .col-sm-6 {
   margin: 3.5rem auto;
 }
 .wrapper .skills .col-sm-6 i {
-  color: #8d8d8d;
+  color: #666666;
 }
 .wrapper .skills .col-sm-6 .logo {
   width: 10rem;
